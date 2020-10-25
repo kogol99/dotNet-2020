@@ -11,7 +11,7 @@ using static System.Array;
 namespace dotNet_Lista3
 {
     class Zad1 { 
-        public void stworz()
+        public void Stworz()
         {
             int n, m;
             String read_str;
@@ -28,26 +28,26 @@ namespace dotNet_Lista3
             } while (!int.TryParse(read_str, out m));
 
             int[,] array2D = new int[n, m];
-            wyplenijTablice2D(n, m, array2D);
-            wypiszTablice2D(n, m, array2D);
-            odwrocTablice2D(n, m, array2D);
+            WyplenijTablice2D(n, m, array2D);
+            WypiszTablice2D(n, m, array2D);
+            OdwrocTablice2D(n, m, array2D);
             Console.Write("\n");
-            wypiszTablice2D(n, m, array2D);
+            WypiszTablice2D(n, m, array2D);
 
             int[][] arrayArrays = new int[n][];
             for (int i = 0; i < m; i++)
             {
                 arrayArrays[i] = new int[m];
             }
-            wyplenijTabliceTablic(n, m, arrayArrays);
-            wypiszTabliceTablic(n, m, arrayArrays);
-            odwrocTabliceTablic(n, m, arrayArrays);
+            WyplenijTabliceTablic(n, m, arrayArrays);
+            WypiszTabliceTablic(n, m, arrayArrays);
+            OdwrocTabliceTablic(n, m, arrayArrays);
             Console.Write("\n");
-            wypiszTabliceTablic(n, m, arrayArrays);
+            WypiszTabliceTablic(n, m, arrayArrays);
 
         }
 
-        void wyplenijTablice2D(int n, int m, int[,] array)
+        void WyplenijTablice2D(int n, int m, int[,] array)
         {
             Random rnd = new Random();
             for(int i = 0; i < n; i++)
@@ -59,7 +59,7 @@ namespace dotNet_Lista3
             }
         }
 
-        void wypiszTablice2D(int n, int m, int[,] array)
+        void WypiszTablice2D(int n, int m, int[,] array)
         {
             for (int i = 0; i < n; i++)
             {
@@ -71,7 +71,7 @@ namespace dotNet_Lista3
             }
         }
 
-        void odwrocTablice2D(int n, int m, int[,] array)
+        void OdwrocTablice2D(int n, int m, int[,] array)
         {
             for(int i = 0; i < n/2; i++)
             {
@@ -84,7 +84,7 @@ namespace dotNet_Lista3
             }
         }
 
-        void wyplenijTabliceTablic(int n, int m, int[][] array)
+        void WyplenijTabliceTablic(int n, int m, int[][] array)
         {
             Random rnd = new Random();
             for (int i = 0; i < n; i++)
@@ -96,7 +96,7 @@ namespace dotNet_Lista3
             }
         }
 
-        void wypiszTabliceTablic(int n, int m, int[][] array)
+        void WypiszTabliceTablic(int n, int m, int[][] array)
         {
             for (int i = 0; i < n; i++)
             {
@@ -108,7 +108,7 @@ namespace dotNet_Lista3
             }
         }
 
-        void odwrocTabliceTablic(int n, int m, int[][] array)
+        void OdwrocTabliceTablic(int n, int m, int[][] array)
         {
             for (int i = 0; i < n / 2; i++)
             {
@@ -121,7 +121,7 @@ namespace dotNet_Lista3
 
     class Zad2
     {
-        public void stworz()
+        public void Stworz()
         {
             Console.WriteLine("Podaj imię");
             string imie = Console.ReadLine();
@@ -146,26 +146,26 @@ namespace dotNet_Lista3
             (string, string, int, int) krotka= (imie, nazwisko, wiek, placa);
             var krotkaAnonimowa = (imie, nazwisko, wiek, placa);
 
-            wypiszZKrokitSposob1(krotka);
-            wypiszZKrokitSposob2(krotka);
-            wypiszZKrokitSposob3(krotka);
-            wypiszZKrokitSposob1(krotkaAnonimowa);
-            wypiszZKrokitSposob2(krotkaAnonimowa);
-            wypiszZKrokitSposob3(krotkaAnonimowa);
+            WypiszZKrokitSposob1(krotka);
+            WypiszZKrokitSposob2(krotka);
+            WypiszZKrokitSposob3(krotka);
+            WypiszZKrokitSposob1(krotkaAnonimowa);
+            WypiszZKrokitSposob2(krotkaAnonimowa);
+            WypiszZKrokitSposob3(krotkaAnonimowa);
 
         }
 
-        void wypiszZKrokitSposob1((string, string, int, int) krotka)
+        void WypiszZKrokitSposob1((string, string, int, int) krotka)
         {
             Console.WriteLine($"Pan/Pani {krotka.Item1} {krotka.Item2} mając {krotka.Item3} lat zarabia {krotka.Item4} zł miesięcznie.");
         }
 
-        void wypiszZKrokitSposob2((string name, string surname, int age, int money) krotka)
+        void WypiszZKrokitSposob2((string name, string surname, int age, int money) krotka)
         {
             Console.WriteLine($"Pan/Pani {krotka.name} {krotka.surname} mając {krotka.age} lat zarabia {krotka.money} zł miesięcznie.");
         }
 
-        void wypiszZKrokitSposob3((string name, string surname, int age, int money) krotka)
+        void WypiszZKrokitSposob3((string name, string surname, int age, int money) krotka)
         {
             (string name, string surname, int age, int money) = krotka;
             Console.WriteLine($"Pan/Pani {name} {surname} mając {age} lat zarabia {money} zł miesięcznie.");
@@ -174,7 +174,7 @@ namespace dotNet_Lista3
 
     class Zad3
     {
-        public void stworz()
+        public void Stworz()
         {
             int @class = 16;
             Console.WriteLine($"Urodziłem się {@class}. dnia miesiąca.");
@@ -183,7 +183,7 @@ namespace dotNet_Lista3
 
     class Zad4
     {
-        public void stworz()
+        public void Stworz()
         {
             int[] array = { 4, 5, 7, 2, 5, 8, 0, 1, 4, 8, 20, 35, 735, 446, 3 };
             Wydrukuj(array);
@@ -226,16 +226,16 @@ namespace dotNet_Lista3
         static void Main(string[] args)
         {
             //Zad1 zadanie = new Zad1();
-            //zadanie.stworz();
+            //zadanie.Stworz();
 
             //Zad2 zadanie2 = new Zad2();
-            //zadanie2.stworz();
+            //zadanie2.Stworz();
 
             //Zad3 zadanie3 = new Zad3();
-            //zadanie3.stworz();
+            //zadanie3.Stworz();
 
             //Zad4 zadanie4 = new Zad4();
-            //zadanie4.stworz();
+            //zadanie4.Stworz();
 
             //Zadanie 5 zostało umieszczone w zadaniu 2.
         }
