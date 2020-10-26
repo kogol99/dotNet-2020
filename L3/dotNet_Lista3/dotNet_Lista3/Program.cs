@@ -29,20 +29,22 @@ namespace dotNet_Lista3
 
             int[,] array2D = new int[n, m];
             WyplenijTablice2D(n, m, array2D);
+            Console.WriteLine("Pierwotna tablica dwuwymiarowa");
             WypiszTablice2D(n, m, array2D);
             OdwrocTablice2D(n, m, array2D);
-            Console.Write("\n");
+            Console.WriteLine("Odwrócona tablica dwuwymiarowa");
             WypiszTablice2D(n, m, array2D);
-
+            
             int[][] arrayArrays = new int[n][];
             for (int i = 0; i < m; i++)
             {
                 arrayArrays[i] = new int[m];
             }
             WyplenijTabliceTablic(n, m, arrayArrays);
+            Console.WriteLine("\nPierwotna tablica tablic");
             WypiszTabliceTablic(n, m, arrayArrays);
             OdwrocTabliceTablic(n, m, arrayArrays);
-            Console.Write("\n");
+            Console.WriteLine("Odwrócona tablica tablic");
             WypiszTabliceTablic(n, m, arrayArrays);
 
         }
@@ -142,16 +144,15 @@ namespace dotNet_Lista3
                 read_str = Console.ReadLine();
             } while (!int.TryParse(read_str, out placa));
 
-
-            (string, string, int, int) krotka= (imie, nazwisko, wiek, placa);
-            var krotkaAnonimowa = (imie, nazwisko, wiek, placa);
+            var krotka = (imie, nazwisko, wiek, placa);
 
             WypiszZKrokitSposob1(krotka);
             WypiszZKrokitSposob2(krotka);
             WypiszZKrokitSposob3(krotka);
-            WypiszZKrokitSposob1(krotkaAnonimowa);
-            WypiszZKrokitSposob2(krotkaAnonimowa);
-            WypiszZKrokitSposob3(krotkaAnonimowa);
+
+            var krotkaAnonimowa = new { nameA = imie, surnameA = nazwisko, ageA = wiek, salaryA = placa };
+
+            WypiszZKrotkiAnonimowej(krotkaAnonimowa);
 
         }
 
@@ -169,6 +170,11 @@ namespace dotNet_Lista3
         {
             (string name, string surname, int age, int money) = krotka;
             Console.WriteLine($"Pan/Pani {name} {surname} mając {age} lat zarabia {money} zł miesięcznie.");
+        }
+
+        void WypiszZKrotkiAnonimowej(dynamic anonim)
+        {
+            Console.WriteLine($"Pan/Pani {anonim.nameA} {anonim.surnameA} mając {anonim.ageA} lat zarabia {anonim.salaryA} zł miesięcznie.");
         }
     }
 
