@@ -1,0 +1,61 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+
+                <div class="list-group">
+                    @foreach (var item in Model.Categories)
+                    {
+                        <a class="list-group-item" asp-action="Index" asp-route-id="@item.CategoryId">@item.Name</a>
+                    }
+                </div>
+
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+
+                <div class="row">
+                    @foreach (var item in Model.Articles)
+                    {
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                @if (Model.isWithId == true)
+                                {
+                                    <img class="card-img-top" src="../../@item.Image" alt="">
+                                }
+                                else
+                                {
+                                    <img class="card-img-top" src="../@item.Image" alt="">
+                                }
+
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        @item.Name
+                                    </h4>
+                                    <h5>@item.Price zł</h5>
+                                    @using(Html.BeginForm("AddToBasket", "Shop", FormMethod.Post))
+                                    { 
+                                    <button style="background-color:#6259ca;border-radius:10px;width:100px;height:27px;text-align:center;padding-top:2px;color:white;cursor:pointer;">Do koszyka!</button>
+                                    }
+                                    <form action="Shop" method="post">
+                                        <input type="submit" style="background-color:#6259ca;border-radius:10px;width:100px;height:27px;text-align:center;padding-top:2px;color:white;cursor:pointer;" value="Do koszyka!">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+        </div>
+    </div>
