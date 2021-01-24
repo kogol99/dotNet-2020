@@ -1,0 +1,7 @@
+﻿<h3>Rozwiązanie równania: </h3>
+<ul>
+@foreach (var x in ViewData["resultsList"] as List<string>)
+{ 
+    <li>@Html.Label("solution", x, new { style = @ViewData["color"] });</li>
+}
+</ul>

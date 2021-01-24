@@ -1,0 +1,12 @@
+﻿@{ ViewData["Title"] = "Zgadywanie";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@if (ViewBag.result.Contains("Trafiona!"))
+{
+<h1 style="font-family: 'Calibri'; text-align: center;">
+    Gratulacje!
+</h1>}
+
+<h2 style="font-family: 'Courier New'; text-align:center;">
+    @Html.Label("solution", ViewBag.result, new { style = ViewBag.color })
+</h2>
